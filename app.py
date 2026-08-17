@@ -151,7 +151,7 @@ if audio_source is not None:
             with col1:
                 st.metric("Estimated Age", f"{res['predicted_age']:.1f} years")
             with col2:
-                st.metric("Predicted Gender", res['gender'].capitalize(), f"{res['gender_confidence']*100:.1f}% confidence")
+                st.metric()
 
             if res['segment_ages']:
                 st.caption(f"Segment Consistency (Std Dev): ±{res['segment_spread']:.2f} years")
