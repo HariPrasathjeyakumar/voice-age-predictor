@@ -109,7 +109,7 @@ def robust_predict(y, model, processor, device, sr=SAMPLE_RATE, num_segments=3):
 
 # --- Streamlit UI ---
 st.set_page_config(page_title="Voice Age & Gender Predictor", page_icon="🎙️")
-st.title("🎙️ Voice Age & Gender Predictor")
+st.title("🎙️ Voice Age Predictor")
 
 processor, model, device = load_pipeline()
 
@@ -138,7 +138,7 @@ with tab2:
 if audio_source is not None:
     st.audio(audio_source)
     
-    if st.button("Predict Age & Gender", type="primary"):
+    if st.button("Predict Age ", type="primary"):
         with st.spinner("Analyzing voice patterns..."):
             y, sr = librosa.load(audio_source, sr=SAMPLE_RATE, mono=True)
             res = robust_predict(y, model, processor, device, sr)
