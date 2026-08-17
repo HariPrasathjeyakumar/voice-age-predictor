@@ -150,8 +150,5 @@ if audio_source is not None:
             col1, col2 = st.columns(2)
             with col1:
                 st.metric("Estimated Age", f"{res['predicted_age']:.1f} years")
-            with col2:
-                st.metric()
-
             if res['segment_ages']:
                 st.caption(f"Segment Consistency (Std Dev): ±{res['segment_spread']:.2f} years")
